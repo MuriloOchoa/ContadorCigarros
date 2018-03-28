@@ -1,10 +1,10 @@
 class Cigarro
-  #
-  #attr_accessor :nome, :cigdia, :totcarteira, :vlrcarteira, :anos
-  #
-  #def initialize(nome, cigdia, totcarteira, vlrcarteira, anos)
-  #  @nome, @cigdia, @totcarteira, @vlrcarteira, @anos = nome, cigdia, totcarteira, vlrcarteira, anos,
-  #end
+
+  attr_accessor :nome, :cigdia, :totcarteira, :vlrcarteira, :anos, :vlrfinal
+
+  def initialize(nome, cigdia, totcarteira, vlrcarteira, anos, vlrfinal)
+    @nome, @cigdia, @totcarteira, @vlrcarteira, @anos, @vlrfinal = nome, cigdia, totcarteira, vlrcarteira, anos, vlrfinal
+  end
 
 
   puts "Bem vindo, digite o seu nome:"
@@ -31,9 +31,13 @@ class Cigarro
   puts "Digite a quantos anos voce fuma: "
   @anos = gets.chomp.to_i
 
-  puts @vlrfinal = ((@cigdia * (@anos * 365)) / @totcarteira) * @vlrcarteira
+  puts
 
-  puts "o valor total gasto com cigarros foi de: " +@vlrfinal.to_s
+  @vlrfinal = ((@cigdia * (@anos * 365)) / @totcarteira) * @vlrcarteira
+
+  puts "o valor total que o "+@nome+" gastou com cigarros foi de: " +@vlrfinal.to_s
+
+  puts
 
   puts "digite algo para sair"
   @sair = gets.chomp.to_i
